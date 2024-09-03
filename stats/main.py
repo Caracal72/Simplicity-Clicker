@@ -5,6 +5,7 @@ points = 0
 def on_button_click(command=lambda: on_button_click(button)):
     global points
     points += 1
+    button.config(text=str(points))
     print(points)
 # Create the main window
 root = tk.Tk()
