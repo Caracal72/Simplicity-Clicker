@@ -1,4 +1,7 @@
 import tkinter as tk
+from tkinter import font, PhotoImage
+import random
+import time
 
 points = 0
 
