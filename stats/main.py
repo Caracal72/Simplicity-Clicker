@@ -1,15 +1,21 @@
 import tkinter as tk
 
-def on_button_click():
-    print("ow!")
+points = 0
 
+def on_button_click(command=lambda: on_button_click(button)):
+    global points
+    points += 1
+    print(points)
 # Create the main window
-root = tk.Tk(500.500)
+root = tk.Tk()
 root.title("Button Example")
 
 # Create a button widget
-button = tk.Button(root, text="try me!!", command=on_button_click)
-button.place(x=0,y=0)
+button = tk.Button(root, text="I love you", command=on_button_click)
+
+button.config(command=lambda: on_button_click(button))
+
+button.config(text=points)
 
 # Place the button on the window
 button.pack()
